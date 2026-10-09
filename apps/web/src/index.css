@@ -1,0 +1,111 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brat: #8ace00;
+  --color-brat-dark: #6ba300;
+  --color-ink: #08090a;
+  --color-ink-soft: #0e1013;
+  --color-panel: #12151a;
+  --color-line: #23272e;
+  --color-muted: #99a1ad;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-ink text-zinc-100 font-sans antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 50% -10rem, rgba(138, 206, 0, 0.18), transparent 70%),
+      radial-gradient(40rem 30rem at 100% 0%, rgba(138, 206, 0, 0.06), transparent 60%);
+    background-repeat: no-repeat;
+  }
+
+  ::selection {
+    @apply bg-brat text-black;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brat;
+  }
+}
+
+/* Utilidad personalizada: así los botones del resto de la app pueden hacer @apply btn */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+  transition-duration: 150ms;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-panel/70 backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply btn bg-brat text-black hover:bg-brat-dark hover:shadow-[0_0_30px_-5px_rgba(138,206,0,0.6)];
+  }
+
+  .btn-ghost {
+    @apply btn border border-line bg-white/5 text-zinc-100 hover:border-brat/60 hover:bg-white/10;
+  }
+
+  .btn-danger {
+    @apply btn border border-red-500/40 bg-red-500/10 text-red-300 hover:bg-red-500/20;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-black/30 px-3.5 py-2.5 text-sm text-zinc-100
+      placeholder:text-zinc-500 focus:border-brat/70 focus:outline-none;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-white/5 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted;
+  }
+
+  .prose-dark a {
+    @apply text-brat underline decoration-brat/40 underline-offset-4 hover:decoration-brat;
+  }
+}
+
+/* Barra de scroll discreta */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f37;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.35s ease-out both;
+}

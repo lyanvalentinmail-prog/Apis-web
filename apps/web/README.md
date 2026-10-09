@@ -6,6 +6,7 @@ registro/login y panel de API keys. Vite + React 19 + Tailwind v4.
 ```bash
 npm run dev      # http://localhost:5173
 npm run build    # dist/
+npm run smoke    # renderiza todas las páginas en SSR para detectar errores
 ```
 
 ## Conexión con la API

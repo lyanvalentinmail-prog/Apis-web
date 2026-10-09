@@ -232,7 +232,7 @@ Si no defines estas variables, los botones de OAuth simplemente no aparecen.
 - Cambia `AUTH_SECRET` en cuanto despliegues (firma las sesiones JWT y el `state` de OAuth).
 - Las contraseñas se guardan con **scrypt** (N=16384) y las API keys solo como **hash SHA-256**.
 - Define `CORS_ORIGINS` con el dominio de tu web en producción.
-- Los límites por defecto: 30 req/min sin key, 60 con cuenta free, 600 en pro
+- Los límites por defecto: 40 req/min sin key, 120 con cuenta free, 600 en pro
   (`RATE_LIMIT_ANON_MINUTE`, `RATE_LIMIT_FREE_MINUTE`, `RATE_LIMIT_PRO_MINUTE`).
 - Errores con forma estable: `{ "error": { "code", "message", "details" } }`.
 

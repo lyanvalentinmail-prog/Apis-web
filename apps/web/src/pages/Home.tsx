@@ -77,7 +77,7 @@ export default function Home() {
               {[
                 ['<200 ms', 'por sticker'],
                 ['4', 'formatos'],
-                ['60 req/min', 'plan free'],
+                ['120 req/min', 'plan free'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <dt className="text-xl font-bold text-brat">{value}</dt>
@@ -133,7 +133,7 @@ export default function Home() {
             <h2 className="text-2xl font-black tracking-tight sm:text-3xl">Tres líneas y lo tienes</h2>
             <p className="text-sm leading-relaxed text-muted">
               La API acepta los parámetros por query string o por JSON. Sin API key funciona con un límite
-              reducido; con tu key tienes 60 peticiones por minuto y estadísticas de uso.
+              reducido; con tu key tienes 120 peticiones por minuto y estadísticas de uso.
             </p>
             <ul className="space-y-2 text-sm text-zinc-300">
               {[

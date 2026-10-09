@@ -57,8 +57,8 @@ export const config = {
 
   /** Límites por plan (peticiones por minuto y al día). "anon" = sin autenticar. */
   rateLimit: {
-    anon: { perMinute: int(process.env.RATE_LIMIT_ANON_MINUTE, 30), perDay: int(process.env.RATE_LIMIT_ANON_DAY, 1000) },
-    free: { perMinute: int(process.env.RATE_LIMIT_FREE_MINUTE, 60), perDay: int(process.env.RATE_LIMIT_FREE_DAY, 5000) },
+    anon: { perMinute: int(process.env.RATE_LIMIT_ANON_MINUTE, 40), perDay: int(process.env.RATE_LIMIT_ANON_DAY, 2000) },
+    free: { perMinute: int(process.env.RATE_LIMIT_FREE_MINUTE, 120), perDay: int(process.env.RATE_LIMIT_FREE_DAY, 50_000) },
     pro: { perMinute: int(process.env.RATE_LIMIT_PRO_MINUTE, 600), perDay: int(process.env.RATE_LIMIT_PRO_DAY, 500_000) },
   },
 

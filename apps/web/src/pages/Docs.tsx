@@ -181,7 +181,7 @@ open("sticker.png", "wb").write(r.content)`,
               <li>Cópiala en ese momento: solo se muestra completa una vez.</li>
             </ol>
             <p className="mt-4 text-sm text-muted">
-              Sin autenticación también funciona, con un límite más bajo (30 peticiones/minuto por IP).
+              Sin autenticación también funciona, con un límite más bajo (40 peticiones/minuto por IP).
             </p>
           </Section>
 
@@ -237,8 +237,8 @@ open("sticker.png", "wb").write(r.content)`,
                 </thead>
                 <tbody className="divide-y divide-line">
                   {[
-                    ['Anónimo (sin key)', '30', '1.000'],
-                    ['Free (registrado)', '60', '5.000'],
+                    ['Anónimo (sin key)', '40', '2.000'],
+                    ['Free (registrado)', '120', '50.000'],
                     ['Pro', '600', '500.000'],
                   ].map(([plan, minute, day]) => (
                     <tr key={plan}>

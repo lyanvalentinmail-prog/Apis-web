@@ -1,0 +1,26 @@
+{
+  "name": "apis-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plantilla full-stack: API de stickers Brat + web con registro, documentación y API keys. Lista para Vercel.",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:api dev:web",
+    "dev:api": "npm run dev --workspace @apis-web/api",
+    "dev:web": "npm run dev --workspace @apis-web/web",
+    "build": "npm run build --workspace @apis-web/api && npm run build --workspace @apis-web/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspace @apis-web/api",
+    "start:api": "npm run start --workspace @apis-web/api",
+    "postinstall": "node scripts/postinstall.mjs"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

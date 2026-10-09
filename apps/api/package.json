@@ -1,0 +1,36 @@
+{
+  "name": "@apis-web/api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API REST para generar stickers estilo Brat (SVG/PNG/JPEG/WebP).",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc -p tsconfig.build.json && node scripts/copy-assets.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "postinstall": "node scripts/copy-fonts.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@typopro/dtp-liberation": "^3.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.3.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.3.3"
+  },
+  "optionalDependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.20.6",
+    "typescript": "^5.7.2"
+  }
+}
